@@ -96,4 +96,32 @@ function deleteNumber() {
   }
 }
 
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    appendNumber(button.getAttribute("data-number"));
+    updateDisplay();
+  });
+});
+
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    chooseOperation(button.getAttribute("data-operator"));
+    updateDisplay();
+  });
+});
+
+equalsButton.addEventListener("click", () => {
+  compute();
+  updateDisplay();
+});
+clearButton.addEventListener("click", () => {
+  clearAll();
+  updateDisplay();
+});
+
+deleteButton.addEventListener("click", () => {
+  deleteNumber();
+  updateDisplay();
+});
+
 updateDisplay();
